@@ -25,7 +25,6 @@ class SolarSystem
     return found_alien
   end
 
-
   def list_aliens
     puts
     alien_list = "Alien races living on #{@p_name}"
@@ -43,7 +42,7 @@ class SolarSystem
     @user_types.each_with_index do |alien, index|
       alien_user_list+= "\n #{index+1}: #{alien.name}"
     end
-    return alien_user_list
+    return alien_user_list if @user_types.count > 0
   end
 end
 
