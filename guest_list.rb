@@ -3,4 +3,7 @@ class Guest_Type
   def initialize(name)
     @name = name
   end
+  def summary
+    return "Your alien's name is #{name}!"
+  end
 end

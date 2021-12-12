@@ -3,7 +3,7 @@ class SolarSystem
   def initialize(p_name)
     @p_name = p_name
     @alien_types = []
-    @user_types = []
+    @guest_types = []
   end
 
   def summary
@@ -14,12 +14,19 @@ class SolarSystem
     @alien_types.push(alien)
   end
 
-  def user_added_alien(alien)
-    @user_types.push(alien)
+  def guest_added_alien(alien)
+    @guest_types.push(alien)
   end
 
   def find_alien_by_name(search)
     found_alien = @alien_types.find do |alien|
+      alien.name == search
+    end
+    return found_alien
+  end
+
+  def find_alien_by_name_guest(search)
+    found_alien = @guest_types.find do |alien|
       alien.name == search
     end
     return found_alien
@@ -35,14 +42,14 @@ class SolarSystem
     return alien_list
   end
 
-  def list_user_aliens
+  def list_guest_aliens
     puts ""
-    alien_user_list = "Alien races from #{@p_name}"
+    alien_guest_list = "Alien races from #{@p_name}"
     # Note: We can use planets, @planets, or self.planets
-    @user_types.each_with_index do |alien, index|
-      alien_user_list+= "\n #{index+1}: #{alien.name}"
+    @guest_types.each_with_index do |alien, index|
+      alien_guest_list+= "\n #{index+1}: #{alien.name}"
     end
-    return alien_user_list if @user_types.count > 0
+    return alien_guest_list if @guest_types.count > 0
   end
 end
 
