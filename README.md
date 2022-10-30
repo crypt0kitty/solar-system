@@ -8,5 +8,4 @@ Upon execution, the CLI program outputs the following:
 4. **exit**: terminates the program loop to successfully exit the program
 
 
-https://user-images.githubusercontent.com/31053962/198865951-a9ab908a-6608-436d-b5e4-4707b439d63b.mp4
 
